@@ -17,7 +17,7 @@ namespace OrganizatorDanych
 
         static List<string> naglowki = new List<string>();
         static List<int> dlugosciNaglowkow = new List<int>();
-
+         
         private static void GatherFileData()
         {
 
