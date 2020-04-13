@@ -79,11 +79,11 @@ namespace OgarniatorDanych_v3
             using (StreamWriter sw = File.AppendText(outputPath))
             {
                 //pomijamy ID paczki
-                for (int i = 1; i < naglowki.Count - 3; i++)
+                for (int i = 1; i < naglowki.Count - 4; i++)
                 {
                     sw.Write(naglowki[i] + ";");
                 }
-                sw.WriteLine(naglowki[naglowki.Count - 3]);
+                sw.WriteLine(naglowki[naglowki.Count - 4]);
             }
 
         }
@@ -120,7 +120,7 @@ namespace OgarniatorDanych_v3
                             if (counter % 1000000 == 0)
                             {
                                 Console.WriteLine("Przerobiono " + counter);
-                                break;
+                                //break;
                             }
 
                             /*if (line.Length != suggestedLineSize)
@@ -230,12 +230,15 @@ namespace OgarniatorDanych_v3
         private static string FixLine(string line)
         {
             string fixedLine = "";
-            int debugMax = 0;
+            int debugMax = 0, result;
+            float result_float;
             string dateFormat = "yyyy-MM-dd HH:mm:ss";
             long centuryBegin = new DateTime(2001, 1, 1).Ticks;
+            bool isNumber;
 
             try
             {
+            //    string tempLine;
                 //1 SHIPMENT_IDENTCODE
                 string tempLine = line.Substring(0, dlugosciNaglowkow[0]);
                 tempLine = tempLine.Replace(" ", "");
@@ -252,6 +255,9 @@ namespace OgarniatorDanych_v3
                 //tempLine = date.ToString();
                 //tempLine = date.Ticks.ToString();
                 //tempLine = tempLine.GetHashCode().ToString();
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
                 tempLine += ";";
                 if (counter < debugMax)
                 {
@@ -266,6 +272,9 @@ namespace OgarniatorDanych_v3
                 date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znać czasu dostawy co do sekundy
                 tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (duża liczba) a do czasu unixowego
                 //tempLine = date.Ticks.ToString();
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
                 tempLine += ";";
                 fixedLine += tempLine;
                 if (counter < debugMax)
@@ -280,6 +289,9 @@ namespace OgarniatorDanych_v3
                 date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znać czasu dostawy co do sekundy
                 tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (duża liczba) a do czasu unixowego
                 //tempLine = date.Ticks.ToString();
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
                 tempLine += ";";
                 fixedLine += tempLine;
                 if (counter < debugMax)
@@ -293,8 +305,7 @@ namespace OgarniatorDanych_v3
                 tempLine = tempLine.Replace(" ", "");
                 tempLine = tempLine.Replace("-", "");
                 //tylko kody pocztowe które są liczbowe - odrzuca kody NL i GB między innymi  //TODO: zrobić hasha (ale żeby potem można odhashować) tych kodów pocztowych które nie są liczbami
-                int result;
-                bool isNumber = Int32.TryParse(tempLine, out result);
+                isNumber = Int32.TryParse(tempLine, out result);
                 if (!isNumber)
                     return null;
                 //tempLine = tempLine.GetHashCode().ToString();
@@ -310,6 +321,9 @@ namespace OgarniatorDanych_v3
                 tempLine = line.Substring(0, dlugosciNaglowkow[5]);
                 tempLine = tempLine.Replace(" ", "");
                 tempLine = ConvertCountryToNumber(tempLine);
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
                 //tempLine += ConvertNumberToCountry(tempLine);
                 //tempLine = tempLine.GetHashCode().ToString();
                 tempLine += ";";
@@ -341,9 +355,12 @@ namespace OgarniatorDanych_v3
                 tempLine = line.Substring(0, dlugosciNaglowkow[7]);
                 tempLine = tempLine.Replace(" ", "");
                 tempLine = ConvertCountryToNumber(tempLine);
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
                 //tempLine += ConvertNumberToCountry(tempLine);
                 //tempLine = tempLine.GetHashCode().ToString();
-                tempLine += ";";
+            //    tempLine += ";";
                 fixedLine += tempLine;
                 if (counter < debugMax)
                 {
@@ -352,16 +369,19 @@ namespace OgarniatorDanych_v3
                 line = line.Substring(dlugosciNaglowkow[7], line.Length - dlugosciNaglowkow[7]);
 
                 //9 SHIPMENT_WEIGHT
-                tempLine = line.Substring(0, dlugosciNaglowkow[8]);
-                tempLine = tempLine.Replace(" ", "");
+            //    tempLine = line.Substring(0, dlugosciNaglowkow[8]);
+            //    tempLine = tempLine.Replace(" ", "");
+            //    isNumber = Double.TryParse(tempLine, out double result_double);
+            //    if (!isNumber)
+            //        return null;
                 //tempLine = tempLine.GetHashCode().ToString();
                 //tempLine += ";";
-                fixedLine += tempLine;
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                }
-                line = line.Substring(dlugosciNaglowkow[8], line.Length - dlugosciNaglowkow[8]);
+            //    fixedLine += tempLine;
+            //    if (counter < debugMax)
+            //    {
+            //        System.Console.WriteLine(tempLine);
+            //    }
+            //    line = line.Substring(dlugosciNaglowkow[8], line.Length - dlugosciNaglowkow[8]);
 
                 if (counter < debugMax)
                 {

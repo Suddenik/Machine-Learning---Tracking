@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ModelByD\\Model.csproj": {}
+    "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\ML_Track_1\\Machine-Learning---Tracking\\ModelByD\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ModelByD\\Model.csproj": {
+    "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\ML_Track_1\\Machine-Learning---Tracking\\ModelByD\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ModelByD\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\ML_Track_1\\Machine-Learning---Tracking\\ModelByD\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ModelByD\\Model.csproj",
-        "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ModelByD\\obj\\",
+        "projectPath": "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\ML_Track_1\\Machine-Learning---Tracking\\ModelByD\\Model.csproj",
+        "packagesPath": "C:\\Users\\Patryk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\ML_Track_1\\Machine-Learning---Tracking\\ModelByD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\damia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Patryk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
