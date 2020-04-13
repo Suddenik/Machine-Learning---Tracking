@@ -14,8 +14,8 @@ namespace OgarniatorDanych
     {
 
         private static string _appPath => Path.GetDirectoryName(Environment.GetCommandLineArgs()[0]);
-        private static string _trainDataPath => Path.Combine(_appPath, "Data", "tracking_dataOut3100.csv");
-        private static string _testDataPath => Path.Combine(_appPath, "Data", "tracking_dataOut3100.csv");
+        private static string _trainDataPath => Path.Combine(_appPath, "Data", "*");
+        private static string _testDataPath => Path.Combine(_appPath, "Data", "*");
 
         public static IEstimator<ITransformer> ProcessData()
         {
