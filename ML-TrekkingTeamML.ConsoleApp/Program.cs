@@ -10,6 +10,7 @@ namespace ML_TrekkingTeamML.ConsoleApp
 {
     class Program
     {
+
         //Dataset to use for predictions 
         //private const string DATA_FILEPATH = @"C:\Users\Patryk\Desktop\ML_DATABASE\tracking_dataOut_TEST.csv";
         private const string DATA_FILEPATH = @"C:\Users\Patryk\Desktop\ML_DATABASE\tracking_TEST_2.txt";
