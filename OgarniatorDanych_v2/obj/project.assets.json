@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v2\\OgarniatorDanych_v2.csproj",
+      "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v2\\OgarniatorDanych_v2.csproj",
       "projectName": "OgarniatorDanych_v2",
-      "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v2\\OgarniatorDanych_v2.csproj",
+      "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v2\\OgarniatorDanych_v2.csproj",
       "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v2\\obj\\",
+      "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

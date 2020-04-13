@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9FBKbQsEihgXJpMna8pFDoUZVGy20TayUXGreXUWWYwUIhyr9j3yKhYCusu7pTg9OphIA8avr8m8Hl3l3X2fxw==",
+  "dgSpecHash": "pwFnuyVxbt3vsR2yZjuxuQIpY7NynyPcNSqYxuRbSMx1/opv2F11YcQM3+ZulxE/C7ABCUoiY50J9mry68YV/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj",
+  "projectFilePath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\damia\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\damia\\.nuget\\packages\\microsoft.ml\\1.5.0-preview\\microsoft.ml.1.5.0-preview.nupkg.sha512",

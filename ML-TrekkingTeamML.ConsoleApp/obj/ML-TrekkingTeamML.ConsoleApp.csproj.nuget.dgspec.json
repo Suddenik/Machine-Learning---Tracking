@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj": {}
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj": {
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj",
         "projectName": "ML-TrekkingTeamML.ConsoleApp",
-        "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj",
+        "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.ConsoleApp\\ML-TrekkingTeamML.ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.ConsoleApp\\obj\\",
+        "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj": {
-                "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj"
+              "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj": {
+                "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj": {
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj",
+        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj",
         "projectName": "ML-TrekkingTeamML.Model",
-        "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj",
+        "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.Model\\ML-TrekkingTeamML.Model.csproj",
         "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML-TrekkingTeamML.Model\\obj\\",
+        "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML-TrekkingTeamML.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

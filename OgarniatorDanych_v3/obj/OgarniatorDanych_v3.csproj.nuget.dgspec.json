@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj": {}
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj": {
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj",
+        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj",
         "projectName": "OgarniatorDanych_v3",
-        "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj",
+        "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v3\\OgarniatorDanych_v3.csproj",
         "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\OgarniatorDanych_v3\\obj\\",
+        "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OgarniatorDanych_v3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

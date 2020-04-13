@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\ML\\ML.csproj": {}
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML\\ML.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damia\\source\\repos\\ML_Track\\ML\\ML.csproj": {
+    "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML\\ML.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML\\ML.csproj",
+        "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML\\ML.csproj",
         "projectName": "ML",
-        "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML\\ML.csproj",
+        "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML\\ML.csproj",
         "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML\\obj\\",
+        "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

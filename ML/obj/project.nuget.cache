@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k3sLyZo2ddlUy1OvWuHUX+pzguHfrCP9UlzH8ljuP1iQ/ZYPfTW0CQprP7mi0Eg/yEUUWL2FaS3ofApKwO2gQA==",
+  "dgSpecHash": "1jBGVGVOgQvaENxpX5Gnayc/MwNHlymV6dpMv9X3VuIvctMHR7C3LjZ2FvRfbDqZ/+7RaIH2c8GWq5gCr4HWSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\damia\\source\\repos\\ML_Track\\ML\\ML.csproj",
+  "projectFilePath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\ML\\ML.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\damia\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\damia\\.nuget\\packages\\microsoft.ml\\1.4.0\\microsoft.ml.1.4.0.nupkg.sha512",

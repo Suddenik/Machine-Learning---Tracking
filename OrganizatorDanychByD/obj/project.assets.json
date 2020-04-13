@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML_Track\\OrganizatorDanychByD\\OrganizatorDanychByD.csproj",
+      "projectUniqueName": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OrganizatorDanychByD\\OrganizatorDanychByD.csproj",
       "projectName": "OrganizatorDanychByD",
-      "projectPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\OrganizatorDanychByD\\OrganizatorDanychByD.csproj",
+      "projectPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OrganizatorDanychByD\\OrganizatorDanychByD.csproj",
       "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\damia\\source\\repos\\ML_Track\\OrganizatorDanychByD\\obj\\",
+      "outputPath": "C:\\Users\\damia\\source\\repos\\ML - TrackingTeam\\Machine-Learning---Tracking\\OrganizatorDanychByD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
