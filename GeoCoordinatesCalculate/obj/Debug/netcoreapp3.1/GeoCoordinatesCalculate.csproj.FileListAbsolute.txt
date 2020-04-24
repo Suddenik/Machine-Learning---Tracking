@@ -1,0 +1,16 @@
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\GeoCoordinatesCalculate.exe
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\GeoCoordinatesCalculate.deps.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\GeoCoordinatesCalculate.runtimeconfig.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\GeoCoordinatesCalculate.runtimeconfig.dev.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\GeoCoordinatesCalculate.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\GeoCoordinatesCalculate.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\bin\Debug\netcoreapp3.1\Nest.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.csproj.CopyComplete
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\GeoCoordinatesCalculate\obj\Debug\netcoreapp3.1\GeoCoordinatesCalculate.genruntimeconfig.cache

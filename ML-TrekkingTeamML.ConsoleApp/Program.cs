@@ -49,7 +49,6 @@ namespace ML_TrekkingTeamML.ConsoleApp
             Console.WriteLine($"Kraj odbiorcy: {kraj_odbiorcy}");
             Console.WriteLine($"Kod pocztowy nadawcy: {sender_zip}");
             Console.WriteLine($"Kraj nadawcy: {kraj_nadawcy}");
-            Console.WriteLine($"Waga przesy³ki: {sampleData.SHIPMENT_WEIGHT}");
             Console.WriteLine($"\n\nPRAWDZIWA data dostarczenia: {_kurier_dostarczyl} \nPRZEWIDYWANA data dostarczenia: {_przewidywana_data_dostarczenia}\n\n");
             Console.WriteLine("=============== Naciœnij cokolwiek ¿eby wyjœæ ===============");
             Console.ReadKey();

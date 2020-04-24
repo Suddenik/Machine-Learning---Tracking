@@ -32,11 +32,5 @@ namespace ML_TrekkingTeamML.Model
 
         [ColumnName("SENDER_COUNTRY_IOS2"), LoadColumn(6)]
         public float SENDER_COUNTRY_IOS2 { get; set; }
-
-
-        [ColumnName("SHIPMENT_WEIGHT"), LoadColumn(7)]
-        public float SHIPMENT_WEIGHT { get; set; }
-
-
     }
 }

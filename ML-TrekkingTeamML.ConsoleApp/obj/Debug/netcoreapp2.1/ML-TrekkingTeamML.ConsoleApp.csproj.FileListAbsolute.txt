@@ -1,0 +1,16 @@
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\MLModel.zip
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.deps.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.runtimeconfig.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.runtimeconfig.dev.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.Model.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\bin\Debug\netcoreapp2.1\ML-TrekkingTeamML.Model.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.csproj.CopyComplete
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\ML-TrekkingTeamML.ConsoleApp\obj\Debug\netcoreapp2.1\ML-TrekkingTeamML.ConsoleApp.genruntimeconfig.cache

@@ -9,7 +9,7 @@ namespace OgarniatorDanych_v3
     class Program
     {
         static string path = "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\tracking_data.rpt";
-        private static string outputPath = "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\tracking_dataOut_TEST.csv";
+        private static string outputPath = "C:\\Users\\Patryk\\Desktop\\ML_DATABASE\\tracking_dataOut_TEST_3.csv";
         //private static FileStream fs;
 
         private static long counter = 0;

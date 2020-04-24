@@ -45,7 +45,7 @@ namespace ML_TrekkingTeamML.ConsoleApp
         public static IEstimator<ITransformer> BuildTrainingPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations 
-            var dataProcessPipeline = mlContext.Transforms.Concatenate("Features", new[] { "SHIPMENT_CREATEDATE", "FIRST_EVENT", "RECEIVER_ZIP", "RECEIVER_COUNTRY_IOS2", "SENDER_ZIP", "SENDER_COUNTRY_IOS2", "SHIPMENT_WEIGHT" });
+            var dataProcessPipeline = mlContext.Transforms.Concatenate("Features", new[] { "SHIPMENT_CREATEDATE", "FIRST_EVENT", "RECEIVER_ZIP", "RECEIVER_COUNTRY_IOS2", "SENDER_ZIP", "SENDER_COUNTRY_IOS2"});
             // Set the training algorithm 
             var trainer = mlContext.Regression.Trainers.FastTreeTweedie(new FastTreeTweedieTrainer.Options() { NumberOfLeaves = 103, MinimumExampleCountPerLeaf = 10, NumberOfTrees = 500, LearningRate = 0.02553782f, Shrinkage = 3.983498f, LabelColumnName = "LAST_EVENT", FeatureColumnName = "Features" });
 
