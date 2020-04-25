@@ -1,0 +1,13 @@
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\bin\Debug\netcoreapp3.1\OgarniatorDanych_v4.exe
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\bin\Debug\netcoreapp3.1\OgarniatorDanych_v4.deps.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\bin\Debug\netcoreapp3.1\OgarniatorDanych_v4.runtimeconfig.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\bin\Debug\netcoreapp3.1\OgarniatorDanych_v4.runtimeconfig.dev.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\bin\Debug\netcoreapp3.1\OgarniatorDanych_v4.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\bin\Debug\netcoreapp3.1\OgarniatorDanych_v4.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ML_Track_1\Machine-Learning---Tracking\OgarniatorDanych_v4\obj\Debug\netcoreapp3.1\OgarniatorDanych_v4.genruntimeconfig.cache

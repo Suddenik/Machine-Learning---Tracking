@@ -6,9 +6,9 @@ namespace GeoCoordinatesCalculate
     {
         static void Main(string[] args)
         {
-            var distance = new Coordinates(48.672309, 15.695585)
+            var distance = new Coordinates(50.101, 19.2486)
                 .DistanceTo(
-                    new Coordinates(48.237867, 16.389477),
+                    new Coordinates(51.7654, 19.4719),
                     UnitOfLength.Kilometers
                 );
             Console.WriteLine("Dystans w kilomentrach wynosi: "+distance);

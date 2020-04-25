@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrganizatorDanychByD", "Org
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "ModelByD\Model.csproj", "{E2FAB884-F951-454F-A6C0-88FE5CDAC5EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCoordinatesCalculate", "GeoCoordinatesCalculate\GeoCoordinatesCalculate.csproj", "{E213BB08-6C4E-45E2-BABA-ED42BABD30DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoCoordinatesCalculate", "GeoCoordinatesCalculate\GeoCoordinatesCalculate.csproj", "{E213BB08-6C4E-45E2-BABA-ED42BABD30DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgarniatorDanych_v4", "OgarniatorDanych_v4\OgarniatorDanych_v4.csproj", "{401F7DA7-124D-4767-9A22-F52A1EE27DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{E213BB08-6C4E-45E2-BABA-ED42BABD30DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E213BB08-6C4E-45E2-BABA-ED42BABD30DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E213BB08-6C4E-45E2-BABA-ED42BABD30DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401F7DA7-124D-4767-9A22-F52A1EE27DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401F7DA7-124D-4767-9A22-F52A1EE27DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401F7DA7-124D-4767-9A22-F52A1EE27DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401F7DA7-124D-4767-9A22-F52A1EE27DE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

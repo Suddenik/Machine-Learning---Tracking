@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace OgarniatorDanych_v3
+namespace OgarniatorDanych_v4
 {
     class Program
     {
@@ -22,7 +21,8 @@ namespace OgarniatorDanych_v3
         static List<int> dlugosciNaglowkow = new List<int>();
 
         private static void GatherFileData()
-        {//zbieramy nazwy tabel
+        {
+            //zbieramy nazwy tabel
             using (StreamReader sr = File.OpenText(path))
             {
                 string line = sr.ReadLine();
@@ -91,23 +91,15 @@ namespace OgarniatorDanych_v3
                         while ((line = sr.ReadLine()) != null)
                         {
                             counter++;
-                            if (counter % 10 == 0)
+                            if (counter % 10000 == 0)
                             {
                                 Console.WriteLine("Przerobiono " + counter);
                                 break;
                             }
 
-                            /*if (line.Length != suggestedLineSize)
-                            {
-                                int x = suggestedLineSize - line.Length;
-                                //avg += line.Length;
-                                Console.WriteLine("line length is bad "+x);
-                                continue;
-                            }*/
 
                             if (line.Contains("NULL"))
                             {
-                                //Console.WriteLine("Has null");
                                 //skip this lame line
                                 continue;
                             }
@@ -144,6 +136,7 @@ namespace OgarniatorDanych_v3
         }
 
         //metody pomocnicze - zamieniające dane w liczby lub odwrotnie
+
         private static string GetDistance(string firstZIP, string secondZIP)
         {
             string distance = "0", firstZIP_GEO = "", secondZIP_GEO = "", tempLine = "";
@@ -207,57 +200,12 @@ namespace OgarniatorDanych_v3
             //distance = (firstLatitude + firstLongitude).ToString();
 
 
+
             //distance = distance_.ToString();
 
             return distance;
         }
 
-        private static string DistanceBetweenTwoZIP(string firstZIP, string secondZIP)
-        {
-            string distanceString="0";
-            string firstCoordinate = "", secondCoordinate = "";
-            string[] words_1, words_2;
-            int flag_1 = 0, flag_2 = 0;
-            float firstLatitude=0, firstLongtitude=0, secondLatitude=0, secondLongtitude=0;
-            var distance = 0.00;
-
-            foreach (var line in File.ReadAllLines(pathZIP))
-            {
-                if (line.Contains(firstZIP) && flag_1 == 0)
-                {
-                    firstCoordinate = line;
-                    words_1 = firstCoordinate.Split(null);
-                    //firstCoordinate = words_1[1] +"||"+ words_1[2]+";";
-                    firstLatitude = float.Parse(words_1[1], CultureInfo.InvariantCulture);
-                    firstLongtitude = float.Parse(words_1[2], CultureInfo.InvariantCulture);
-
-                    flag_1 = 1;
-                }
-                if (line.Contains(secondZIP) && flag_2 == 0)
-                {
-                    secondCoordinate = line;
-                    words_2 = secondCoordinate.Split(null);
-                    //secondCoordinate = words_2[1] + "||" + words_2[2];
-                    secondLatitude = float.Parse(words_2[1], CultureInfo.InvariantCulture);
-                    secondLongtitude = float.Parse(words_2[2], CultureInfo.InvariantCulture);
-
-                    flag_2 = 1;
-                }
-                if (flag_1 == 1 && flag_2 ==1)
-                {
-                    distance = new Coordinates(firstLatitude, firstLongtitude)
-                        .DistanceTo(
-                        new Coordinates(secondLatitude, secondLongtitude),
-                        UnitOfLength.Kilometers
-                    );
-                    break;
-                }
-            }
-            distanceString = distance.ToString();
-            //distanceString = firstCoordinate + secondCoordinate;
-            //distanceString = firstLatitude.ToString() + "||" + firstLongtitude.ToString() +";" + secondLatitude.ToString() + "||" + secondLongtitude.ToString();
-            return distanceString;
-        }
 
         private static double ConvertToUnixTimestamp(DateTime date)
         {
@@ -461,7 +409,6 @@ namespace OgarniatorDanych_v3
                 //5 RECIEVER_ZIP
                 tempLine = line.Substring(0, dlugosciNaglowkow[4]);
                 tempLine = tempLine.Replace(" ", "");
-                string receiverZIP = tempLine;
                 tempLine += ";";
                 fixedLine += tempLine;
                 if (counter < debugMax)
@@ -486,7 +433,6 @@ namespace OgarniatorDanych_v3
                 //7 SENDER_ZIP
                 tempLine = line.Substring(0, dlugosciNaglowkow[6]);
                 tempLine = tempLine.Replace(" ", "");
-                string senderZIP = tempLine;
                 tempLine += ";";
                 fixedLine += tempLine;
                 if (counter < debugMax)
@@ -510,10 +456,8 @@ namespace OgarniatorDanych_v3
 
                 //9 SHIPMENT_WEIGHT
                 tempLine = line.Substring(0, dlugosciNaglowkow[8]);
-                tempLine = tempLine.Replace(" ", "");
-                tempLine = DistanceBetweenTwoZIP(receiverZIP, senderZIP);
-                //tempLine = receiverZIP + senderZIP;
-                //tempLine = "0";
+                //tempLine = GetDistance();
+                tempLine += "0";
                 fixedLine += tempLine;
                 if (counter < debugMax)
                 {
@@ -550,7 +494,6 @@ namespace OgarniatorDanych_v3
             Console.WriteLine("Zapisuje plik w: " + outputPath);
         }
     }
-
     public class UnitOfLength
     {
         public static UnitOfLength Kilometers = new UnitOfLength(1.609344);
@@ -606,4 +549,5 @@ namespace OgarniatorDanych_v3
         }
     }
 }
+
 
