@@ -3993,11 +3993,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction\\Prediction.csproj",
+      "projectUniqueName": "C:\\ML\\Machine-Learning---Tracking\\Prediction\\Prediction.csproj",
       "projectName": "Prediction",
-      "projectPath": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction\\Prediction.csproj",
+      "projectPath": "C:\\ML\\Machine-Learning---Tracking\\Prediction\\Prediction.csproj",
       "packagesPath": "C:\\Users\\Patryk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction\\obj\\",
+      "outputPath": "C:\\ML\\Machine-Learning---Tracking\\Prediction\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -4018,8 +4018,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction.Model\\Prediction.Model.csproj": {
-              "projectPath": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction.Model\\Prediction.Model.csproj"
+            "C:\\ML\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj": {
+              "projectPath": "C:\\ML\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj"
             }
           }
         }

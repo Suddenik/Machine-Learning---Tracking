@@ -15,6 +15,7 @@ namespace Prediction
 {
     class Program
     {
+        private static string DATA_TO_TRANSFORM;
         private static string TRAIN_DATA_FILEPATH; //= @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\tracking_dataOut_POLSKA_roznice_dat.csv";
         static string pathZIP = @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\PL.csv";
         private static string MODEL_FILEPATH = @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\MLModel.zip";
@@ -55,10 +56,11 @@ namespace Prediction
             else if (choice.Equals("2"))
             {
                 Console.WriteLine("Podaj œcie¿kê do pliku .rpt z danymi Ÿród³owymi:");
-                string path = Console.ReadLine();
+                DATA_TO_TRANSFORM = Console.ReadLine();
                 Console.WriteLine("Podaj œcie¿kê do zapisania przerobionego pliku w formacie .csv");
-
-                CrateOutputFile();
+                TRAIN_DATA_FILEPATH = Console.ReadLine()+ @"\tracking_dataOut_POLSKA_roznice_dat.csv";
+                CrateOutputFile(TRAIN_DATA_FILEPATH);
+                ConvertTry(1,DATA_TO_TRANSFORM,TRAIN_DATA_FILEPATH);
             }
             else if (choice.Equals("3"))
                 CreateModel();
@@ -457,13 +459,236 @@ namespace Prediction
             return sampleForPrediction;
         }
         ////////////////////////////////////////////////////////////////////////////////////////
-        
+        private static int ConvertTry(long startindex, string path, string outputPath)
+        {
+            Console.WriteLine("Rozpoczynam od " + startindex);
+            using (StreamReader sr = File.OpenText(path))
+            {
+                using (StreamWriter sw = File.AppendText(outputPath))
+                {
+                    string line = "";
+                    try
+                    {
+                        for (int a = 0; a < startindex; a++)
+                        {
+                            sr.ReadLine();
+                        }
 
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            counter++;
+                            if (counter % 10 == 0)
+                            {
+                                Console.WriteLine("Przerobiono " + counter);
+                            }
 
+                            if (line.Contains("NULL"))
+                            {
+                                continue;
+                            }
 
+                            string fixedLine = FixLine(line);
+                            if (fixedLine != null)
+                            {
+                                sw.WriteLine(fixedLine);
+                            }
+                        }
+                        System.Console.WriteLine("There were {0} lines.", counter);
+                        System.Console.WriteLine("Ukonczono pomyslnie");
+                        System.Console.WriteLine("Nacisjnij cokolwiek by zamknac program");
+                        Console.ReadKey();
+                    }
+                    catch (Exception e)
+                    {
+                        System.Console.WriteLine("Jakis error " + e.Message);
+                        System.Console.WriteLine(counter + " Linia: " + line + " :Koniec.");
+                        System.Console.WriteLine("Nacisjnij cokolwiek by probowac kontynuowac");
+                        Console.ReadKey();
+                    }
+                }
+                return 0;
+            }
+        }
 
+        private static string FixLine(string line)
+        {
+            string fixedLine = "";
+            int debugMax = 0, result;
+            float result_float;
+            string dateFormat = "yyyy-MM-dd HH:mm:ss";
+            long centuryBegin = new DateTime(2001, 1, 1).Ticks;
+            bool isNumber;
 
+            try
+            {
+                //1 SHIPMENT_IDENTCODE
+                string tempLine = line.Substring(0, dlugosciNaglowkow[0]);
+                tempLine = tempLine.Replace(" ", "");
+                tempLine += ";";
+                //System.Console.Write(tempLine);
+                //fixedLine += tempLine;
+                line = line.Substring(dlugosciNaglowkow[0], line.Length - dlugosciNaglowkow[0]);
 
+                //2 SHIPMENT_CREATEDATE
+                tempLine = line.Substring(0, dlugosciNaglowkow[1] - 5);
+                DateTime date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
+                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
+                //  tempLine += ";";
+                string createDate = tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                //  fixedLine += tempLine;
+                line = line.Substring(dlugosciNaglowkow[1], line.Length - dlugosciNaglowkow[1]);
+
+                //3 FIRST_EVENT
+                tempLine = line.Substring(0, dlugosciNaglowkow[2] - 5);
+                date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
+                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
+                //  tempLine += ";";
+                //  fixedLine += tempLine;
+                string firstEvent = tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[2], line.Length - dlugosciNaglowkow[2]);
+
+                //4 LAST_EVENT
+                tempLine = line.Substring(0, dlugosciNaglowkow[3] - 5);
+                date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
+                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                isNumber = Int32.TryParse(tempLine, out result);
+                if (!isNumber)
+                    return null;
+                //  tempLine += ";";
+                //  fixedLine += tempLine;
+                string lastEvent = tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[3], line.Length - dlugosciNaglowkow[3]);
+
+                //5 RECIEVER_ZIP
+                tempLine = line.Substring(0, dlugosciNaglowkow[4]);
+                tempLine = tempLine.Replace(" ", "");
+                string receiverZIP = tempLine;
+                tempLine = tempLine.Replace("-", "");
+                string receiverZIPString = tempLine;
+                //  tempLine += ";";
+                //  fixedLine += tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[4], line.Length - dlugosciNaglowkow[4]);
+
+                //6 RECEIVER_COUNTRY_ISO2
+                tempLine = line.Substring(0, dlugosciNaglowkow[5]);
+                tempLine = tempLine.Replace(" ", "");
+                if (!tempLine.Equals("PL"))
+                    return null;
+                //  tempLine += ";";
+                //  fixedLine += tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[5], line.Length - dlugosciNaglowkow[5]);
+
+                //7 SENDER_ZIP
+                tempLine = line.Substring(0, dlugosciNaglowkow[6]);
+                tempLine = tempLine.Replace(" ", "");
+                string senderZIP = tempLine;
+                tempLine = tempLine.Replace("-", "");
+                string senderZIPString = tempLine;
+                //  tempLine += ";";
+                //  fixedLine += tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[6], line.Length - dlugosciNaglowkow[6]);
+
+                //8 SENDER_COUNTRY_ISO2
+                tempLine = line.Substring(0, dlugosciNaglowkow[7]);
+                tempLine = tempLine.Replace(" ", "");
+                if (!tempLine.Equals("PL"))
+                    return null;
+                tempLine += ";";
+                fixedLine += tempLine;
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[7], line.Length - dlugosciNaglowkow[7]);
+
+                //9 DISTANCE IN KM
+                tempLine = line.Substring(0, dlugosciNaglowkow[8]);
+                //  tempLine = tempLine.Replace(" ", "");
+                tempLine = DistanceBetweenTwoZIP(receiverZIP, senderZIP);
+                tempLine = tempLine.Replace(",", ".");
+                isNumber = Single.TryParse(tempLine, out float f_result);
+                if (!isNumber)
+                    return null;
+                else {
+                    if (f_result > 900 || f_result < 0.1)
+                        return null;
+                }
+                string distance = tempLine;
+                //  fixedLine += tempLine;
+
+                int[] num = new int[3];
+                num[0] = int.Parse(createDate);
+                num[1] = int.Parse(firstEvent);
+                num[2] = int.Parse(lastEvent);
+                int diff1 = 0, diff2 = 0;
+                diff1 = num[1] - num[0];
+                diff2 = num[2] - num[1];
+                if (diff1 > 0 && diff2 > 0)
+                {
+                    fixedLine = diff1.ToString() + ";" + diff2.ToString() + ";" + receiverZIPString + ";"
+                        + senderZIPString + distance;
+                }
+                else
+                    return null;
+                
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                }
+                line = line.Substring(dlugosciNaglowkow[8], line.Length - dlugosciNaglowkow[8]);
+
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine(tempLine);
+                    Console.ReadKey();
+                    System.Console.WriteLine(fixedLine);
+                    Console.ReadKey();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (counter < debugMax)
+                {
+                    System.Console.WriteLine("Exception: " + ex.Message);
+                    System.Console.WriteLine(line);
+                }
+                return null;
+            }
+            return fixedLine;
+        }
     }
 
     public class UnitOfLength

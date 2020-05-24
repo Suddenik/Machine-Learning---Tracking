@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NZFL4UUaWqV/are23qVkTWnQU5CInazOeJFWx7xlGpZtQShH88qwBFQIViYtLUQlDsbKncoJEsVIwnhWtMlhGw==",
+  "dgSpecHash": "jV+DYT1E/qxeHxjRfiwbGoD5qQB9i6EMEuOueHb6LNX+9L64ml2bCbMmYXYfVrr5ct+I/INtzJFjOYN67q5TMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction\\Prediction.csproj",
+  "projectFilePath": "C:\\ML\\Machine-Learning---Tracking\\Prediction\\Prediction.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\Patryk\\.nuget\\packages\\microsoft.ml\\1.5.0-preview\\microsoft.ml.1.5.0-preview.nupkg.sha512",

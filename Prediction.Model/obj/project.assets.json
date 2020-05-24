@@ -3619,11 +3619,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction.Model\\Prediction.Model.csproj",
+      "projectUniqueName": "C:\\ML\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj",
       "projectName": "Prediction.Model",
-      "projectPath": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction.Model\\Prediction.Model.csproj",
+      "projectPath": "C:\\ML\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj",
       "packagesPath": "C:\\Users\\Patryk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Patryk\\Desktop\\Machine Learning\\FINAL_VER\\Prediction\\Prediction.Model\\obj\\",
+      "outputPath": "C:\\ML\\Machine-Learning---Tracking\\Prediction.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
