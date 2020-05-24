@@ -1,0 +1,10 @@
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.deps.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.pdb

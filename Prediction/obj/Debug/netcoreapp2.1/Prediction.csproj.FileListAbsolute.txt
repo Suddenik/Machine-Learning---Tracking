@@ -1,0 +1,16 @@
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\MLModel.zip
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.deps.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.dev.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CopyComplete
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.genruntimeconfig.cache
