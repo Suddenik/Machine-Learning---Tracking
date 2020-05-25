@@ -18,3 +18,13 @@ C:\ML\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Pred
 C:\ML\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfo.cs
 C:\ML\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.dll
 C:\ML\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.pdb
+C:\AA\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\AA\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.deps.json
+C:\AA\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.dll
+C:\AA\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.pdb
+C:\AA\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.csprojAssemblyReference.cache
+C:\AA\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.csproj.CoreCompileInputs.cache
+C:\AA\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfoInputs.cache
+C:\AA\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfo.cs
+C:\AA\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.dll
+C:\AA\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.pdb

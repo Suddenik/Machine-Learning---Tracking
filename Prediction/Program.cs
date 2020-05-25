@@ -17,8 +17,8 @@ namespace Prediction
     {
         private static string DATA_TO_TRANSFORM;
         private static string TRAIN_DATA_FILEPATH; //= @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\tracking_dataOut_POLSKA_roznice_dat.csv";
-        static string pathZIP = @"D:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\PL.csv";
-        private static string MODEL_FILEPATH = @"D:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\MLModel.zip";
+        static string pathZIP = @"C:\AA\Machine-Learning---Tracking\PL.csv";
+        private static string MODEL_FILEPATH = @"C:\AA\Machine-Learning---Tracking\Prediction.Model\MLModel.zip";
 
         private static MLContext mlContext = new MLContext(seed: 1);
 
