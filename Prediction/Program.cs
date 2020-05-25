@@ -17,13 +17,11 @@ namespace Prediction
     {
         private static string DATA_TO_TRANSFORM;
         private static string TRAIN_DATA_FILEPATH; //= @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\tracking_dataOut_POLSKA_roznice_dat.csv";
-        static string pathZIP = @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\PL.csv";
-        private static string MODEL_FILEPATH = @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction.Model\MLModel.zip";
-        
+        static string pathZIP = @"D:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\PL.csv";
+        private static string MODEL_FILEPATH = @"D:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\MLModel.zip";
+
         private static MLContext mlContext = new MLContext(seed: 1);
 
-
-        
         private static string DATA_FILEPATH_IN = @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\tracking_dataOut_POLSKA_in.csv";
         private static string DATA_FILEPATH_OUT;//= @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\tracking_dataOut_POLSKA_TEST.csv";
         private static long naglowki_ = 0;
@@ -58,9 +56,11 @@ namespace Prediction
                 Console.WriteLine("Podaj œcie¿kê do pliku .rpt z danymi Ÿród³owymi:");
                 DATA_TO_TRANSFORM = Console.ReadLine();
                 Console.WriteLine("Podaj œcie¿kê do zapisania przerobionego pliku w formacie .csv");
-                TRAIN_DATA_FILEPATH = Console.ReadLine()+ @"\tracking_dataOut_POLSKA_roznice_dat.csv";
+                TRAIN_DATA_FILEPATH = Console.ReadLine() + @"\tracking_dataOut_POLSKA_roznice_dat.csv";
                 CrateOutputFile(TRAIN_DATA_FILEPATH);
-                ConvertTry(1,DATA_TO_TRANSFORM,TRAIN_DATA_FILEPATH);
+                GatherFileData(DATA_TO_TRANSFORM, TRAIN_DATA_FILEPATH);
+                CreateHeadersInOutput(TRAIN_DATA_FILEPATH);
+                ConvertTry(2, DATA_TO_TRANSFORM, TRAIN_DATA_FILEPATH);
             }
             else if (choice.Equals("3"))
                 CreateModel();
@@ -72,14 +72,58 @@ namespace Prediction
             //Input(DATA_FILEPATH_OUT);
         }
 
+        private static void CreateHeadersInOutput(string outputPath)
+        {
+            //TODO: przerobic naglowki na sztywno, bo i tak beda troche inne
+            using (StreamWriter sw = File.AppendText(outputPath))
+            {
+                sw.WriteLine("TIME_BEFORE_COURIER_GET_PACKAGE;TIME_TO_DELIVER;ZIP_RECEIVER;ZIP_SENDER;DISTANCE");
+            }
+        }
+
+        private static void GatherFileData(string inputFile, string outputPath)
+        {
+            try
+            {
+                string message = "";
+
+                //zbieramy nazwy tabel
+                using (StreamReader sr = File.OpenText(inputFile))
+                {
+                    string line = sr.ReadLine();
+                    int iloscNaglowkow = 0;
+                    foreach (var subline in line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        naglowki.Add(subline);
+                        iloscNaglowkow++;
+                        //message += subline;
+                    }
+
+                    //zbieramy dlugosci tabel
+                    line = sr.ReadLine();
+                    int iloscdanych = 0;
+                    foreach (var subline in line.Split(' '))
+                    {
+                        dlugosciNaglowkow.Add(subline.Length + 1);
+                        iloscdanych++;
+                        suggestedLineSize += subline.Length;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                //
+            }
+        }
+
+
         private static void Result()
         {
             //CrateOutputFile(DATA_FILEPATH_IN);
             CrateOutputFile(DATA_FILEPATH_OUT);
-            
+
             Input(DATA_FILEPATH_OUT);
             //ConvertToTest(DATA_FILEPATH_IN, DATA_FILEPATH_OUT);//jeœli to odkomentujesz to wtedy zakomentuj wy¿sze wywo³anie matody
-
 
             // Create single instance of sample data from first line of dataset for model input
             ModelInput sampleData = CreateSingleDataSample(DATA_FILEPATH_OUT);
@@ -133,12 +177,13 @@ namespace Prediction
 
             using (StreamWriter sw = File.AppendText(output))
             {
+
                 string line = "", tempLine = "";
                 line = "TIME_BEFORE_COURIER_GET_PACKAGE;TIME_TO_DELIVER;ZIP_RECEIVER;ZIP_SENDER;DISTANCE";
                 sw.WriteLine(line);
-                
+
                 //data zakupu
-                Console.WriteLine("Podaj datê zakupu (format: "+dateFormat+"):");
+                Console.WriteLine("Podaj datê zakupu (format: " + dateFormat + "):");
                 tempLine = Console.ReadLine();
                 DateTime date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
                 date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
@@ -148,7 +193,7 @@ namespace Prediction
                     Console.WriteLine("B£¥D KONWERSJI DATY ZAKUPU");
                 tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
                 num[0] = result;
-                
+
                 //data odbioru przez kuriera
                 Console.WriteLine("Podaj datê odbioru paczki przez kuriera (format: " + dateFormat + "):");
                 tempLine = Console.ReadLine();
@@ -160,7 +205,7 @@ namespace Prediction
                     Console.WriteLine("B£¥D KONWERSJI DATY ODBIORU PACZKI");
                 tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
                 num[1] = result;
-                
+
                 //*data odbioru dostarczenia paczki przez kuriera
                 //Console.WriteLine("Podaj datê dostarczenia paczki przez kuriera (format: " + dateFormat + "):");
                 //tempLine = Console.ReadLine();
@@ -172,7 +217,7 @@ namespace Prediction
                 //    Console.WriteLine("B£¥D KONWERSJI DATY DOSTARCZENIA");
                 //tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
                 //num[2] = result;
-                
+
                 //kod pocztowy odiorcy
                 Console.WriteLine("Podaj kod pocztowy odbiory (format: XX-XXX):");
                 string receiver = Console.ReadLine();
@@ -180,7 +225,7 @@ namespace Prediction
                 //kod pocztowy nadawcy
                 Console.WriteLine("Podaj kod pocztowy nadawcy (format: XX-XXX):");
                 string sender = Console.ReadLine();
-                
+
                 //ró¿nica w datach
                 int diff1 = 0, diff2 = 0;
                 diff1 = num[1] - num[0];
@@ -196,7 +241,7 @@ namespace Prediction
                     data_obioru_przez_kuriera = num[1].ToString();
                     data_dostarczenia = num[2].ToString();
                     ilosc_godzin = diff2;
-                    line = diff1.ToString() +";"+ /*diff2.ToString() +*/";"+
+                    line = diff1.ToString() + ";" + /*diff2.ToString() +*/";" +
                         receiver.Replace("-", "") + ";" + sender.Replace("-", "") + ";" + distance.Replace(",", ".");
                     sw.WriteLine(line);
                 }
@@ -462,6 +507,7 @@ namespace Prediction
         private static int ConvertTry(long startindex, string path, string outputPath)
         {
             Console.WriteLine("Rozpoczynam od " + startindex);
+            int breakcount = 100;
             using (StreamReader sr = File.OpenText(path))
             {
                 using (StreamWriter sw = File.AppendText(outputPath))
@@ -477,9 +523,9 @@ namespace Prediction
                         while ((line = sr.ReadLine()) != null)
                         {
                             counter++;
-                            if (counter % 10 == 0)
+                            if (counter % 100 == 0)
                             {
-                                Console.WriteLine("Przerobiono " + counter);
+                                //Console.WriteLine("Przerobiono " + counter);                                
                             }
 
                             if (line.Contains("NULL"))
@@ -491,6 +537,12 @@ namespace Prediction
                             if (fixedLine != null)
                             {
                                 sw.WriteLine(fixedLine);
+                                //Console.WriteLine(fixedLine);
+                                breakcount--;
+                                if (breakcount < 0)
+                                {
+                                    break;
+                                }
                             }
                         }
                         System.Console.WriteLine("There were {0} lines.", counter);
@@ -506,8 +558,9 @@ namespace Prediction
                         Console.ReadKey();
                     }
                 }
-                return 0;
             }
+            Console.WriteLine("Convert stop");
+            return 0;
         }
 
         private static string FixLine(string line)
@@ -521,12 +574,17 @@ namespace Prediction
 
             try
             {
+                //SPEEDUPER.EXE
+                string[] temporino;
+                temporino = line.Split("PL");
+                if (temporino.Length != 3)
+                {
+                    //Console.WriteLine("Nie jest pl -> pl");
+                    return null;
+                }
+
+                string tempLine = "";
                 //1 SHIPMENT_IDENTCODE
-                string tempLine = line.Substring(0, dlugosciNaglowkow[0]);
-                tempLine = tempLine.Replace(" ", "");
-                tempLine += ";";
-                //System.Console.Write(tempLine);
-                //fixedLine += tempLine;
                 line = line.Substring(dlugosciNaglowkow[0], line.Length - dlugosciNaglowkow[0]);
 
                 //2 SHIPMENT_CREATEDATE
@@ -536,118 +594,102 @@ namespace Prediction
                 tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
                 isNumber = Int32.TryParse(tempLine, out result);
                 if (!isNumber)
-                    return null;
-                //  tempLine += ";";
-                string createDate = tempLine;
-                if (counter < debugMax)
                 {
-                    System.Console.WriteLine(tempLine);
+                    //Console.WriteLine("createdate nie jest liczba");
+                    //Console.ReadKey();
+                    return null;
                 }
-                //  fixedLine += tempLine;
+
+
+                string createDate = tempLine;
+
                 line = line.Substring(dlugosciNaglowkow[1], line.Length - dlugosciNaglowkow[1]);
 
                 //3 FIRST_EVENT
                 tempLine = line.Substring(0, dlugosciNaglowkow[2] - 5);
                 date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
-                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
-                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);
+                tempLine = ConvertToUnixTimestamp(date).ToString();
                 isNumber = Int32.TryParse(tempLine, out result);
                 if (!isNumber)
-                    return null;
-                //  tempLine += ";";
-                //  fixedLine += tempLine;
-                string firstEvent = tempLine;
-                if (counter < debugMax)
                 {
-                    System.Console.WriteLine(tempLine);
+                    //Console.WriteLine("firstevent nie jest liczba");
+                    //Console.ReadKey();
+                    return null;
                 }
+
+                string firstEvent = tempLine;
+
                 line = line.Substring(dlugosciNaglowkow[2], line.Length - dlugosciNaglowkow[2]);
 
                 //4 LAST_EVENT
                 tempLine = line.Substring(0, dlugosciNaglowkow[3] - 5);
                 date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
-                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
-                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);
+                tempLine = ConvertToUnixTimestamp(date).ToString();
                 isNumber = Int32.TryParse(tempLine, out result);
                 if (!isNumber)
-                    return null;
-                //  tempLine += ";";
-                //  fixedLine += tempLine;
-                string lastEvent = tempLine;
-                if (counter < debugMax)
                 {
-                    System.Console.WriteLine(tempLine);
+
+                    //Console.WriteLine("lastevent nie jest liczba");
+                    //Console.ReadKey();
+                    return null;
                 }
+
+                string lastEvent = tempLine;
+
                 line = line.Substring(dlugosciNaglowkow[3], line.Length - dlugosciNaglowkow[3]);
 
                 //5 RECIEVER_ZIP
                 tempLine = line.Substring(0, dlugosciNaglowkow[4]);
                 tempLine = tempLine.Replace(" ", "");
                 string receiverZIP = tempLine;
+
                 tempLine = tempLine.Replace("-", "");
                 string receiverZIPString = tempLine;
-                //  tempLine += ";";
-                //  fixedLine += tempLine;
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                }
+
                 line = line.Substring(dlugosciNaglowkow[4], line.Length - dlugosciNaglowkow[4]);
 
                 //6 RECEIVER_COUNTRY_ISO2
-                tempLine = line.Substring(0, dlugosciNaglowkow[5]);
-                tempLine = tempLine.Replace(" ", "");
-                if (!tempLine.Equals("PL"))
-                    return null;
-                //  tempLine += ";";
-                //  fixedLine += tempLine;
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                }
                 line = line.Substring(dlugosciNaglowkow[5], line.Length - dlugosciNaglowkow[5]);
 
                 //7 SENDER_ZIP
                 tempLine = line.Substring(0, dlugosciNaglowkow[6]);
                 tempLine = tempLine.Replace(" ", "");
                 string senderZIP = tempLine;
+
                 tempLine = tempLine.Replace("-", "");
                 string senderZIPString = tempLine;
-                //  tempLine += ";";
-                //  fixedLine += tempLine;
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                }
+
                 line = line.Substring(dlugosciNaglowkow[6], line.Length - dlugosciNaglowkow[6]);
 
                 //8 SENDER_COUNTRY_ISO2
-                tempLine = line.Substring(0, dlugosciNaglowkow[7]);
-                tempLine = tempLine.Replace(" ", "");
-                if (!tempLine.Equals("PL"))
-                    return null;
-                tempLine += ";";
-                fixedLine += tempLine;
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                }
                 line = line.Substring(dlugosciNaglowkow[7], line.Length - dlugosciNaglowkow[7]);
 
-                //9 DISTANCE IN KM
+                //9 DISTANCE
                 tempLine = line.Substring(0, dlugosciNaglowkow[8]);
-                //  tempLine = tempLine.Replace(" ", "");
+
                 tempLine = DistanceBetweenTwoZIP(receiverZIP, senderZIP);
-                tempLine = tempLine.Replace(",", ".");
+                //tempLine = tempLine.Replace(",", ".");
+                //tempLine = "123,333";
+
                 isNumber = Single.TryParse(tempLine, out float f_result);
                 if (!isNumber)
+                {
+                    //Console.WriteLine(tempLine);
+                    //Console.ReadKey();
                     return null;
-                else {
+                }
+                else
+                {
                     if (f_result > 900 || f_result < 0.1)
+                    {
+                        //Console.WriteLine("Precyzja");
+                        //Console.ReadKey();
                         return null;
+                    }
                 }
                 string distance = tempLine;
-                //  fixedLine += tempLine;
 
                 int[] num = new int[3];
                 num[0] = int.Parse(createDate);
@@ -662,20 +704,10 @@ namespace Prediction
                         + senderZIPString + distance;
                 }
                 else
+                {
+                    //Console.WriteLine("Roznice");
+                    //Console.ReadKey();
                     return null;
-                
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                }
-                line = line.Substring(dlugosciNaglowkow[8], line.Length - dlugosciNaglowkow[8]);
-
-                if (counter < debugMax)
-                {
-                    System.Console.WriteLine(tempLine);
-                    Console.ReadKey();
-                    System.Console.WriteLine(fixedLine);
-                    Console.ReadKey();
                 }
             }
             catch (Exception ex)
