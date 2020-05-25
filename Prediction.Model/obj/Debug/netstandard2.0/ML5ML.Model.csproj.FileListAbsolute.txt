@@ -1,0 +1,20 @@
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\bin\Debug\netstandard2.0\ML5ML.Model.deps.json
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\bin\Debug\netstandard2.0\ML5ML.Model.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\bin\Debug\netstandard2.0\ML5ML.Model.pdb
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.dll
+C:\Users\Patryk\Desktop\ML_DATABASE\ZKODAMI_ML\ML5\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.pdb
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\bin\Debug\netstandard2.0\ML5ML.Model.deps.json
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\bin\Debug\netstandard2.0\ML5ML.Model.dll
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\bin\Debug\netstandard2.0\ML5ML.Model.pdb
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.dll
+C:\Users\Patryk\Desktop\DO POKAZANIA\ML52 - przewidywanie\ML5ML.Model\obj\Debug\netstandard2.0\ML5ML.Model.pdb

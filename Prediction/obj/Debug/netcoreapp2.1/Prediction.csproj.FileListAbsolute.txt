@@ -1,0 +1,48 @@
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.csprojAssemblyReference.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfoInputs.cache
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfo.cs
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\MLModel.zip
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.deps.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.dev.json
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CopyComplete
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.dll
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.pdb
+C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\Prediction\Prediction\obj\Debug\netcoreapp2.1\Prediction.genruntimeconfig.cache
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\MLModel.zip
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.deps.json
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.json
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.dev.json
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.dll
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.pdb
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.dll
+C:\ML\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.pdb
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.csprojAssemblyReference.cache
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CoreCompileInputs.cache
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfoInputs.cache
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfo.cs
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CopyComplete
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.dll
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.pdb
+C:\ML\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.genruntimeconfig.cache
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\MLModel.zip
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.deps.json
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.json
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.runtimeconfig.dev.json
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.dll
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.pdb
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.dll
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\bin\Debug\netcoreapp2.1\Prediction.Model.pdb
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.csprojAssemblyReference.cache
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CoreCompileInputs.cache
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfoInputs.cache
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.AssemblyInfo.cs
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.csproj.CopyComplete
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.dll
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.pdb
+d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction\obj\Debug\netcoreapp2.1\Prediction.genruntimeconfig.cache

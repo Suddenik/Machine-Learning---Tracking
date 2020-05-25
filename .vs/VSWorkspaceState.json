@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Prediction",
+    "\\Prediction\\obj"
   ],
-  "SelectedNode": "\\Prediction.sln",
+  "SelectedNode": "\\Prediction\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
