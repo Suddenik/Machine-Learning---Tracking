@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers.FastTree;
@@ -17,8 +18,8 @@ namespace Prediction
     {
         private static string DATA_TO_TRANSFORM;
         private static string TRAIN_DATA_FILEPATH; //= @"C:\Users\Patryk\Desktop\Machine Learning\FINAL_VER\tracking_dataOut_POLSKA_roznice_dat.csv";
-        static string pathZIP = @"D:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\PL.csv";
-        private static string MODEL_FILEPATH = @"D:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\MLModel.zip";
+        static string pathZIP = @"C:\MACHINE_LEARNING\Machine-Learning---Tracking\PL.csv";
+        private static string MODEL_FILEPATH = @"C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\MLModel.zip";
 
         private static MLContext mlContext = new MLContext(seed: 1);
 
@@ -29,6 +30,7 @@ namespace Prediction
         private static string data_obioru_przez_kuriera = null;
         private static string data_dostarczenia = null;
         private static double ilosc_godzin = 0;
+        private static int breakcount = 100;
 
         private static long counter = 0;
         private static long fileLength = -2;
@@ -36,40 +38,123 @@ namespace Prediction
         static List<int> dlugosciNaglowkow = new List<int>();
         private static int suggestedLineSize = 0;
 
+        private static double maximumInaccuracyInHours = 24;
+        private static long iloscTrafien = 0;
+        private static long iloscPudel = 0;
+        private static long iloscProb = 0;
+        private static float rs;
+        private static Semaphore _pool = new Semaphore(0, 2);
+
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Co chcesz zrobiæ: " +
+            string choice="";
+
+            while (!choice.Equals("5"))
+            {
+                Console.WriteLine();
+                Console.WriteLine("Mo¿liwe dzia³ania: " +
                 "\n1 - przewidywanie dostarczenia paczki przez kuriera" +
                 "\n2 - przekszta³cenie danych z pliku Ÿród³owego do postaci, któr¹ przyjmuje model w celu trenowania (mo¿e zaj¹æ du¿o czasu)" +
                 "\n3 - trenowanie modelu na nowych danych" +
-                "\n4 - wyœwietlenie dok³adnoœci dla modelu (mo¿e zaj¹æ du¿o czasu)\n\n");
-            string choice = Console.ReadLine();
-            if (choice.Equals("1"))
-            {
-                DATA_FILEPATH_OUT = Environment.CurrentDirectory;//przypisuje œcie¿kê do folderu projektu
-                DATA_FILEPATH_OUT += @"\tracking_dataOut_POLSKA_TEST";
-                Result();
-            }
-            else if (choice.Equals("2"))
-            {
-                Console.WriteLine("Podaj œcie¿kê do pliku .rpt z danymi Ÿród³owymi:");
-                DATA_TO_TRANSFORM = Console.ReadLine();
-                Console.WriteLine("Podaj œcie¿kê do zapisania przerobionego pliku w formacie .csv");
-                TRAIN_DATA_FILEPATH = Console.ReadLine() + @"\tracking_dataOut_POLSKA_roznice_dat.csv";
-                CrateOutputFile(TRAIN_DATA_FILEPATH);
-                GatherFileData(DATA_TO_TRANSFORM, TRAIN_DATA_FILEPATH);
-                CreateHeadersInOutput(TRAIN_DATA_FILEPATH);
-                ConvertTry(2, DATA_TO_TRANSFORM, TRAIN_DATA_FILEPATH);
-            }
-            else if (choice.Equals("3"))
-                CreateModel();
-            else
-                Console.WriteLine("Nieznana komenda");
+                "\n4 - wyœwietlenie dok³adnoœci dla modelu (mo¿e zaj¹æ du¿o czasu)" +
+                "\n5 - zakoñczenie dzia³ania programu\n\n");
+                choice = Console.ReadLine();
+                if (choice.Equals("1"))
+                {
+                    DATA_FILEPATH_OUT = Environment.CurrentDirectory;//przypisuje œcie¿kê do folderu projektu
+                    DATA_FILEPATH_OUT += @"\tracking_dataOut_POLSKA_TEST";
+                    Result();
+                }
+                else if (choice.Equals("2"))
+                {
+                    Console.WriteLine("Podaj œcie¿kê do pliku .rpt z danymi Ÿród³owymi:");
+                    DATA_TO_TRANSFORM = Console.ReadLine();
+                    Console.WriteLine("Podaj œcie¿kê do zapisania przekszta³conego pliku w formacie .csv");
+                    TRAIN_DATA_FILEPATH = Console.ReadLine();
+                    Console.WriteLine("Ile rekordów ma zawieraæ przekszta³cony plik?");//pilnowaæ ¿eby nie wysz³o poza zakres!
+                    breakcount = Int32.Parse(Console.ReadLine());
 
-            //CreateModel();
-            //CrateOutputFile(DATA_FILEPATH_OUT);
-            //Input(DATA_FILEPATH_OUT);
+                    CrateOutputFile(TRAIN_DATA_FILEPATH);
+                    GatherFileData(DATA_TO_TRANSFORM, TRAIN_DATA_FILEPATH);
+                    CreateHeadersInOutput(TRAIN_DATA_FILEPATH);
+                    ConvertTry(2, DATA_TO_TRANSFORM, TRAIN_DATA_FILEPATH);
+                }
+                else if (choice.Equals("3"))
+                {
+                    Console.WriteLine("Podaj œcie¿kê do przekszta³conego pliku w formacie .csv");
+                    TRAIN_DATA_FILEPATH = Console.ReadLine();
+                    CreateModel();
+                }
+                else if (choice.Equals("4"))
+                {
+                    Console.WriteLine("Podaj œcie¿kê do przekszta³conego pliku w formacie .csv");
+                    TRAIN_DATA_FILEPATH = Console.ReadLine();
+                    Console.WriteLine("Podaj zakres testowanej dok³adnoœci w godzinach");
+                    maximumInaccuracyInHours = Double.Parse(Console.ReadLine());
+                    ManualRS(TRAIN_DATA_FILEPATH);
+                }
+                else
+                {
+                    if(!choice.Equals("5"))
+                        Console.WriteLine("Nieznana komenda");
+                }
+            }
+        }
+
+        private static void ManualRS(string train)
+        {
+            List<ModelInput2> db = new List<ModelInput2>();
+
+            using (StreamReader sr = new StreamReader(train))
+            {
+                string line = sr.ReadLine();
+                while ((line = sr.ReadLine()) != null)
+                {
+                    ModelInput2 temp = new ModelInput2(line);
+                    db.Add(temp);
+                }
+            }
+
+            Console.WriteLine("Iloœæ linii: " + db.Count);
+
+            foreach (ModelInput2 sample in db)
+            {
+                Worker(sample);
+                
+                if (iloscProb % 100 == 1)
+                {
+                    rs = (float)iloscTrafien / (float)iloscProb;
+                    Console.WriteLine("Trafienia: " + iloscTrafien + " pudla: " + iloscPudel + " suma prob: " + iloscProb);
+                    Console.WriteLine("RS: " + rs);
+                }
+
+            }
+
+            Console.WriteLine("Trafienia: " + iloscTrafien + " pudla: " + iloscPudel + " suma prob: " + iloscProb);
+            rs = (float)iloscTrafien / (float)iloscProb;
+            Console.WriteLine("RS: " + rs);
+            Console.WriteLine("=============== End of process, hit any key to finish ===============");
+            Console.ReadKey();
+
+        }
+
+        private static void Worker(object num)
+        {
+            ModelInput2 sample = (ModelInput2)num;
+
+            var predictionResult = ConsumeModel2.Predict(sample);
+
+            double roznica = sample.TIME_TO_DELIVER - predictionResult.Score;
+            iloscProb++;
+            if (Math.Abs(roznica) > maximumInaccuracyInHours * 3600)
+            {
+                iloscPudel++;
+            }
+            else
+            {
+                iloscTrafien++;
+            }
         }
 
         private static void CreateHeadersInOutput(string outputPath)
@@ -153,7 +238,7 @@ namespace Prediction
             //Console.WriteLine($"\nCzas dostawy: {sampleData.TIME_TO_DELIVER/3600} godzin\n\n");
             Console.WriteLine($"\nPrzewidywany czas dostawy: ~{mniej_wiecej} godzin\n\n");
             Console.WriteLine($"\n\nPrzewidywana data odbioru: {przewidywana_data_dostarczenia}\n\n");//Prawdziwa data odbioru {prawdziwa_data_dostarczenia}\n
-            Console.WriteLine("=============== End of process, hit any key to finish ===============");
+            Console.WriteLine("=============== Naciœnij dowolny klawisz aby zakoñczyæ ===============");
             Console.ReadKey();
         }
 
@@ -219,7 +304,7 @@ namespace Prediction
                 //num[2] = result;
 
                 //kod pocztowy odiorcy
-                Console.WriteLine("Podaj kod pocztowy odbiory (format: XX-XXX):");
+                Console.WriteLine("Podaj kod pocztowy odbiorcy (format: XX-XXX):");
                 string receiver = Console.ReadLine();
 
                 //kod pocztowy nadawcy
@@ -507,7 +592,6 @@ namespace Prediction
         private static int ConvertTry(long startindex, string path, string outputPath)
         {
             Console.WriteLine("Rozpoczynam od " + startindex);
-            int breakcount = 100;
             using (StreamReader sr = File.OpenText(path))
             {
                 using (StreamWriter sw = File.AppendText(outputPath))
@@ -525,7 +609,7 @@ namespace Prediction
                             counter++;
                             if (counter % 100 == 0)
                             {
-                                //Console.WriteLine("Przerobiono " + counter);                                
+                                Console.WriteLine("Przerobiono " + counter);
                             }
 
                             if (line.Contains("NULL"))
@@ -545,16 +629,16 @@ namespace Prediction
                                 }
                             }
                         }
-                        System.Console.WriteLine("There were {0} lines.", counter);
+                        System.Console.WriteLine("Przekszta³cono {0} linii aby uzyskaæ {1} rekordów.", counter,breakcount);
                         System.Console.WriteLine("Ukonczono pomyslnie");
-                        System.Console.WriteLine("Nacisjnij cokolwiek by zamknac program");
+                        System.Console.WriteLine("Naciœnij cokolwiek aby zamknaæ program");
                         Console.ReadKey();
                     }
                     catch (Exception e)
                     {
                         System.Console.WriteLine("Jakis error " + e.Message);
                         System.Console.WriteLine(counter + " Linia: " + line + " :Koniec.");
-                        System.Console.WriteLine("Nacisjnij cokolwiek by probowac kontynuowac");
+                        System.Console.WriteLine("Naciœnij cokolwiek aby zamknaæ program");
                         Console.ReadKey();
                     }
                 }
@@ -701,7 +785,7 @@ namespace Prediction
                 if (diff1 > 0 && diff2 > 0)
                 {
                     fixedLine = diff1.ToString() + ";" + diff2.ToString() + ";" + receiverZIPString + ";"
-                        + senderZIPString + distance;
+                        + senderZIPString +";"+ distance.Replace(",",".");
                 }
                 else
                 {

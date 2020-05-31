@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj": {}
+    "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj": {}
   },
   "projects": {
-    "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj": {
+    "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj",
+        "projectUniqueName": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj",
         "projectName": "Prediction.Model",
-        "projectPath": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj",
-        "packagesPath": "C:\\Users\\Suddi\\.nuget\\packages\\",
-        "outputPath": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking\\Prediction.Model\\obj\\",
+        "projectPath": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj",
+        "packagesPath": "C:\\Users\\Patryk\\.nuget\\packages\\",
+        "outputPath": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Suddi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Patryk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -63,7 +68,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

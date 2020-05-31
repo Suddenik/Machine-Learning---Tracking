@@ -28,3 +28,13 @@ d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\obj\Deb
 d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfo.cs
 d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.dll
 d:\Users\Suddi\Source\Repos\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.pdb
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.deps.json
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.dll
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\bin\Debug\netstandard2.0\Prediction.Model.pdb
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.csprojAssemblyReference.cache
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.csproj.CoreCompileInputs.cache
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfoInputs.cache
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.AssemblyInfo.cs
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.dll
+C:\MACHINE_LEARNING\Machine-Learning---Tracking\Prediction.Model\obj\Debug\netstandard2.0\Prediction.Model.pdb
