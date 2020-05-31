@@ -268,26 +268,40 @@ namespace Prediction
                 sw.WriteLine(line);
 
                 //data zakupu
-                Console.WriteLine("Podaj datê zakupu (format: " + dateFormat + "):");
-                tempLine = Console.ReadLine();
-                DateTime date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
-                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
-                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
-                isNumber = Int32.TryParse(tempLine, out result);
-                if (!isNumber)
-                    Console.WriteLine("B£¥D KONWERSJI DATY ZAKUPU");
+                
+                do
+                {
+                    Console.WriteLine("Podaj datê zakupu (format: " + dateFormat + "):");
+                    tempLine = Console.ReadLine();
+                    DateTime date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                    date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
+                    tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                    isNumber = Int32.TryParse(tempLine, out result);
+
+                    if (!isNumber)
+                    {
+                        Console.WriteLine("B£¥D KONWERSJI DATY ZAKUPU");
+                    }
+
+                } while (!isNumber);
+                    
                 tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
                 num[0] = result;
 
                 //data odbioru przez kuriera
-                Console.WriteLine("Podaj datê odbioru paczki przez kuriera (format: " + dateFormat + "):");
-                tempLine = Console.ReadLine();
-                date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
-                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
-                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
-                isNumber = Int32.TryParse(tempLine, out result);
-                if (!isNumber)
-                    Console.WriteLine("B£¥D KONWERSJI DATY ODBIORU PACZKI");
+                do
+                {
+                    Console.WriteLine("Podaj datê odbioru paczki przez kuriera (format: " + dateFormat + "):");
+                    tempLine = Console.ReadLine();
+                    DateTime date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                    date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
+                    tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                    isNumber = Int32.TryParse(tempLine, out result);
+                    if (!isNumber)
+                        Console.WriteLine("B£¥D KONWERSJI DATY ODBIORU PACZKI");
+                } while (!isNumber);
+
+
                 tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
                 num[1] = result;
 
@@ -304,12 +318,23 @@ namespace Prediction
                 //num[2] = result;
 
                 //kod pocztowy odiorcy
-                Console.WriteLine("Podaj kod pocztowy odbiorcy (format: XX-XXX):");
-                string receiver = Console.ReadLine();
+
+                string receiver = "";
+                do
+                {
+                    Console.WriteLine("Podaj kod pocztowy odbiorcy (format: XX-XXX):");
+                    receiver = Console.ReadLine();
+                } while (!jestKodemPocztowym(receiver));
 
                 //kod pocztowy nadawcy
-                Console.WriteLine("Podaj kod pocztowy nadawcy (format: XX-XXX):");
-                string sender = Console.ReadLine();
+
+                string sender = "";
+
+                do
+                {
+                    Console.WriteLine("Podaj kod pocztowy nadawcy (format: XX-XXX):");
+                    sender = Console.ReadLine();
+                } while (!jestKodemPocztowym(sender));
 
                 //ró¿nica w datach
                 int diff1 = 0, diff2 = 0;
@@ -335,6 +360,24 @@ namespace Prediction
                         "data dostarczenia jest wczeœniejsza ni¿ data odbioru");
             }
         }
+
+        private static bool jestKodemPocztowym(string kod)
+        {
+            if (kod.Length != 6)
+                return false;
+
+            if (!kod.Contains("-"))
+                return false;
+
+            int flag = 0;
+            if (int.TryParse(kod.Split("-")[0],out flag) && int.TryParse(kod.Split("-")[1], out flag))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private static double ConvertToUnixTimestamp(DateTime date)
         {
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);

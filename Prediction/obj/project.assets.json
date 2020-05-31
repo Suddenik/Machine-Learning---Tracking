@@ -3986,27 +3986,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Patryk\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Suddi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction\\Prediction.csproj",
+      "projectUniqueName": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking33\\Prediction\\Prediction.csproj",
       "projectName": "Prediction",
-      "projectPath": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction\\Prediction.csproj",
-      "packagesPath": "C:\\Users\\Patryk\\.nuget\\packages\\",
-      "outputPath": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction\\obj\\",
+      "projectPath": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking33\\Prediction\\Prediction.csproj",
+      "packagesPath": "C:\\Users\\Suddi\\.nuget\\packages\\",
+      "outputPath": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking33\\Prediction\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Patryk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Suddi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -4018,8 +4011,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj": {
-              "projectPath": "C:\\MACHINE_LEARNING\\Machine-Learning---Tracking\\Prediction.Model\\Prediction.Model.csproj"
+            "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking33\\Prediction.Model\\Prediction.Model.csproj": {
+              "projectPath": "d:\\Users\\Suddi\\Source\\Repos\\Machine-Learning---Tracking33\\Prediction.Model\\Prediction.Model.csproj"
             }
           }
         }
@@ -4058,7 +4051,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
