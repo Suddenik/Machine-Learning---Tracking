@@ -226,7 +226,7 @@ namespace Prediction
             DateTime prawdziwa_data_odebrania = UnixTimeStampToDateTime(_data_odebrania);
             DateTime przewidywana_data_dostarczenia = UnixTimeStampToDateTime(_przewidywana_data_dostarczenia);
 
-            int mniej_wiecej = Convert.ToInt32(predictionResult.Score / 3600);
+            int mniej_wiecej = Convert.ToInt32(predictionResult.Score / 3600) + Convert.ToInt32((_data_odebrania-_data_zakupu)/3600);
 
             Console.WriteLine();
             //Console.WriteLine("Using model to make single prediction -- Comparing actual TIME_TO_DELIVER with predicted TIME_TO_DELIVER from sample data...\n\n");
@@ -282,14 +282,21 @@ namespace Prediction
                 //data odbioru przez kuriera
                 Console.WriteLine("Podaj datê odbioru paczki przez kuriera (format: " + dateFormat + "):");
                 tempLine = Console.ReadLine();
-                date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
-                date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
-                tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
-                isNumber = Int32.TryParse(tempLine, out result);
-                if (!isNumber)
-                    Console.WriteLine("B£¥D KONWERSJI DATY ODBIORU PACZKI");
-                tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
-                num[1] = result;
+                if (tempLine.Equals("BRAK"))
+                {
+                    num[1] = num[0] + 64800;
+                }
+                else
+                {
+                    date = DateTime.ParseExact(tempLine, dateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                    date = date.AddMinutes(-date.Minute).AddSeconds(-date.Second);//tylko godziny z danej daty - nie musimy znaæ czasu dostawy co do sekundy
+                    tempLine = ConvertToUnixTimestamp(date).ToString();//konwertowanie nie do ticków (du¿a liczba) a do czasu unixowego
+                    isNumber = Int32.TryParse(tempLine, out result);
+                    if (!isNumber)
+                        Console.WriteLine("B£¥D KONWERSJI DATY ODBIORU PACZKI");
+                    tempLine = tempLine.Substring(0, tempLine.Length - 2);//usuniêcie dwóch ostatnich zer z unixtimestamp - ¿eby by³a mniejsza liczba przy uczeniu
+                    num[1] = result;
+                }
 
                 //*data odbioru dostarczenia paczki przez kuriera
                 //Console.WriteLine("Podaj datê dostarczenia paczki przez kuriera (format: " + dateFormat + "):");
